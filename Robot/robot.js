@@ -10,7 +10,25 @@ const  roads = [
   "Grete's House-Shope",
   "Marketplace-Farm",
   "Marketplace-Post Office",
-  "Mareketplace-Shope"
+  "Mareketplace-Shope",
   "Marketplace-Town Hall",
   "Shop-Town Hall"
 ];
+
+function buildGraph(edges) {
+  let graph = Object.create(null);
+  function addEdge(from, to) {
+    if (graph[from] == null) {
+      graph[from] = [to];
+    } else {
+      graph[from].push(to);
+    }
+  }
+  for (let [from, to] of edges.map( r => r.split("-"))) {
+    addEdge(from, to);
+    addEdge(to, from);
+  }
+  return graph;
+}
+
+const roadGraph = buildGraph(roads);
