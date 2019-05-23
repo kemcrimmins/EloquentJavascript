@@ -86,7 +86,7 @@ VillageState.random = function(parcelCount = 5) {
     let address = randomPick(Object.keys(roadGraph));
     let place;
     do {
-      place = randomPick(Objects.keys(roadGraph));
+      place = randomPick(Object.keys(roadGraph));
     } while (place == address);
     parcels.push({place, address});
   }
