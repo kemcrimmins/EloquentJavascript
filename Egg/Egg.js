@@ -104,3 +104,16 @@ function evaluate(expr, scope) {
     }
   }
 }
+
+specialForms.while = (args, scope) => {
+  if (args.length != 2) {
+    throw new SyntaxError("Wrong number of args to while");
+  }
+  while (evaluate(args[0], scope) !== false) {
+    evaluate(args[1], scope);
+  }
+
+  // Since undefined does not exist in Egg, we return false,
+  // for lack of a meaningful result.
+  return false;
+};
