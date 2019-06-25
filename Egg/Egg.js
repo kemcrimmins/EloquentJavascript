@@ -136,4 +136,13 @@ specialForms.do = (args, scope) => {
   return value;
 };
 
+specialForms.define = (args, scope) => {
+  if (args.length != 2 || args[0].type != "word") {
+    throw new SyntaxError("Incorrect use of define");
+  }
+  let value = evaluate(args[1], scope);
+  scope[args[0].name] = value;
+  return value;
+};
+
 
