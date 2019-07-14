@@ -110,4 +110,9 @@ const levelChars = {
   "=": Lava, "|": Lava, "v": Lava
 };
 
+// Create level instance
+let simpleLevel = new Level(simpleLevelPlan);
+console.log(`${simpleLevel.width} by ${simpleLevel.height}`);
+// → 22 by 9
+
 
