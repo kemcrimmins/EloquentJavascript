@@ -25,7 +25,7 @@ async function notAllowed(request) {
 }
 
 // Resolve url to system file path
-const {parse} = require("url);
+const {parse} = require("url");
 const {resolve, sep} = require("path");
 const baseDirectory = process.cwd();
 
